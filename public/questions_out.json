@@ -1,0 +1,58 @@
+[
+  {
+      "id": 1,
+      "en": "To make tomorrow more playful, I will...",
+      "de": "Um den morgigen Tag spielerischer zu gestalten, werde ich...",
+      "it": "Per rendere domani più giocoso, io...",
+      "fr": "Pour rendre demain plus ludique, je vais..."
+  },
+  {
+      "id": 2,
+      "en": "What I loved about my team today is...",
+      "de": "Was ich heute an meinem Team geliebt habe, ist...",
+      "it": "Ciò che ho amato del mio team oggi è...",
+      "fr": "Ce que j'ai aimé dans mon équipe aujourd'hui est..."
+  },
+  {
+      "id": 3,
+      "en": "What has recently been your highest high?",
+      "de": "Was war in letzter Zeit dein größtes Hoch?",
+      "it": "Qual è stato il tuo picco più recente?",
+      "fr": "Quel a été votre moment le plus fort récemment?"
+  },
+  {
+      "id": 4,
+      "en": "How have you been today?",
+      "de": "Wie warst du heute?",
+      "it": "Come stai stato oggi?",
+      "fr": "Comment ça s'est passé aujourd'hui?"
+  },
+  {
+      "id": 5,
+      "en": "I liked most...",
+      "de": "Mir hat am besten gefallen...",
+      "it": "Mi è piaciuto di più...",
+      "fr": "Ce que j'ai le plus aimé est..."
+  },
+  {
+      "id": 6,
+      "en": "What superpower would have helped you today?",
+      "de": "Welche Superkraft hätte dir heute geholfen?",
+      "it": "Quale superpotere ti avrebbe aiutato oggi?",
+      "fr": "Quel super pouvoir vous aurait aidé aujourd'hui?"
+  },
+  {
+      "id": 7,
+      "en": "If you could wake up having gained any quality or ability, what would it be?",
+      "de": "Wenn du aufwachen könntest und eine Fähigkeit oder Eigenschaft dazugewonnen hättest, welche wäre es?",
+      "it": "Se potessi svegliarti avendo acquisito una qualità o abilità, quale sarebbe?",
+      "fr": "Si vous pouviez vous réveiller avec une qualité ou une capacité en plus, laquelle serait-elle?"
+  },
+  {
+      "id": 8,
+      "en": "Which challenge did you tackle today?",
+      "de": "Welche Herausforderung hast du heute gemeistert?",
+      "it": "Quale sfida hai affrontato oggi?",
+      "fr": "Quel défi avez-vous relevé aujourd'hui?"
+  }
+]
