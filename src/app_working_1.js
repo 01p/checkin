@@ -31,29 +31,16 @@
 	function close() {
 	showModal = false;
 	}	
-	let lastTouchTime = 0;
 
-function handleDoubleClickTap() {
-	const now = new Date().getTime();
-	const timesince = now - lastTouchTime;
 
-	if ((timesince < 300) && (timesince > 0)) {
-		switchQuestion();
-	}
-	
-	lastTouchTime = now;
-}
+	onMount(async () => {
+		window.addEventListener('keydown', handleKeyDown);
+		await loadQuestions();
+	});
 
-onMount(async () => {
-	window.addEventListener('keydown', handleKeyDown);
-	window.addEventListener('touchend', handleDoubleClickTap);
-	await loadQuestions();
-});
-
-onDestroy(() => {
-	window.removeEventListener('keydown', handleKeyDown);
-	window.removeEventListener('touchend', handleDoubleClickTap);
-});
+	onDestroy(() => {
+		window.removeEventListener('keydown', handleKeyDown);
+	});
 	
 	async function loadQuestions() {
 		const response = await fetch(`/questions_${questionSet}.json`);
@@ -127,34 +114,33 @@ onDestroy(() => {
 
 
 
-		<div class="side-mobil"> <span class="bar">
+		<div class="side"> <span class="bar"><h1 style="color:#000000;">
+					{questionSet === "in" ? "Check-In" : "Check-Out"}
+				</h1>
 			<button on:click={toggleSet} class="button">
-				{questionSet === "in" ? "O" : "I"}
+				{questionSet === "in" ? "Out" : "In"}
 			</button></span>
 
 			<span class="bar"><select bind:value={selectedLanguage} class="dropdown">
-				<option value="en" >EN</option>
-				<option value="de">DE</option>
-				<option value="it">IT</option>
-				<option value="fr">FR</option>
+				<option value="en" >English</option>
+				<option value="de">German</option>
+				<option value="it">Italian</option>
+				<option value="fr">French</option>
 			</select></span>
 
 			<span class="bar" style="display: flex;
 			flex-direction: column;
 			align-items: center;"><button on:click={switchQuestion} class="button" style="margin-top:18px; margin-bottom:0px;">
-				
-			</button> <p style="font-size:9px; margin:0px;  writing-mode: vertical-rl;
-			text-orientation: upright;">( Double Tap )</p></span>
+				Shuffle
+			</button> <p style="font-size:9px; margin:0px;">( Press Space )</p></span>
 
 			<span class="bar">
 			<button on:click={toggleFullscreen} class="button">
-				F
-			</button><p style="font-size:9px; margin:0px;  writing-mode: vertical-rl;
-			text-orientation: upright;">( Double Tap )</p>
+				Fullscreen
+			</button>
 			</span>
 			<span class="bar">
-			<button on:click={() => showModal = true}>I</button><p style="font-size:9px; margin:0px;  writing-mode: vertical-rl;
-			text-orientation: upright;">( Double Tap )</p>
+			<button on:click={() => showModal = true}>Info</button>
 			</span>
 	
 	</div>

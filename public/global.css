@@ -257,7 +257,7 @@ max-width: 55%;
 
 
   .side {
-	opacity: 0.3;
+	opacity: 0.2;
 	transition: all ease 0.53s;
 }
 .side:hover {
@@ -291,6 +291,18 @@ max-width: 55%;
 }	
 
 
+.side-mobil {
+	display: flex;         /* Makes the div a flex container */
+	align-items: center;   /* Aligns the items vertically in the center */
+	justify-content: space-between; /* Distributes the space between the items */
+}
+
+.bar {
+	display: flex;
+	align-items: center;   /* Aligns the items vertically in the center */
+}
+
+
 
 
 
@@ -310,4 +322,23 @@ max-width: 55%;
 	.side.visible {
 		top: 0;
 	}
+}
+
+
+button {
+    line-height: 0.4em;
+    border: 2px solid #000000;
+    padding:10px 10px;
+    border-radius: 30px;
+
+    font-size: 12px;
+}
+
+.dropdown {
+	line-height: 0.4em;
+    border: 2px solid #000000;
+    padding:10px 10px;
+    border-radius: 30px;
+
+    font-size: 12px;
 }
