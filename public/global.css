@@ -175,13 +175,13 @@ z-index: 0;
 	 top: 0;
   	z-index: 999;
 
-	  align-items: center;  /* Vertically aligns the items in the center */
+	  align-items: center;  
 	  gap: 10px;
 }
 
 .bar{
 	display: flex;
-	align-items: center;  /* Vertically aligns the items in the center */
+	align-items: center;  
 	gap: 10px; 
 }
 .box{
@@ -238,14 +238,18 @@ max-width: 55%;
     align-items: center;
     z-index: 10;
 	_filter: blur(10px);
+    backdrop-filter: blur(15px);
+    
   }
 
   .modal-content {
-    background-color: #fff;
+   //Background-color: #161111;
     padding: 1rem;
-    width: 60%;
+    width: 100%;
+    height: 100%;
     position: relative;
- 
+    border-radius: 15px;
+    color:#fff;
   }
 
   .close {
@@ -253,6 +257,7 @@ max-width: 55%;
     top: 0.5rem;
     right: 0.5rem;
     cursor: pointer;
+    font-size: 100px;
   }
 
 
@@ -288,6 +293,8 @@ max-width: 55%;
 	opacity: 1;
 	transition: all ease 0.53s;
 }
+
+
 }	
 
 
@@ -304,7 +311,14 @@ max-width: 55%;
 
 
 
+button {
+    line-height: 0.4em;
+    border: 2px solid #000000;
+    border-radius: 30px;
+    padding:10px 10px;
 
+    font-size: 12px;
+}
 
 
 /* For smaller screens, allow two elements to fit side by side */
@@ -322,23 +336,25 @@ max-width: 55%;
 	.side.visible {
 		top: 0;
 	}
+
 }
 
 
-button {
-    line-height: 0.4em;
-    border: 2px solid #000000;
-    padding:10px 10px;
-    border-radius: 30px;
 
-    font-size: 12px;
-}
+
+
 
 .dropdown {
 	line-height: 0.4em;
     border: 2px solid #000000;
     padding:10px 10px;
     border-radius: 30px;
-
     font-size: 12px;
+}
+
+.button-mobile {
+	line-height: 1em;
+	border: 4px solid #000000;
+	border-radius: 30px;
+	font-size: 2em;
 }

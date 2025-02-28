@@ -92,12 +92,13 @@ onDestroy(() => {
 
 
 	function updateUrl() {
+		/* Show question, gradient and language in url
 		const id = questions.indexOf(randomQuestion);
 		const params = new URLSearchParams();
 		params.set('lang', selectedLanguage);
 		params.set('gradient', gradientNumber);
 		if (id !== -1) params.set('id', id);
-		history.pushState({}, '', '?' + params.toString());
+		history.pushState({}, '', '?' + params.toString());*/
 	}
 
 	onMount(async () => {
@@ -123,17 +124,14 @@ onDestroy(() => {
 <div class={`full gradient_${gradientNumber}`}>
 	
 
-
-
-
-
-		<div class="side-mobil"> <span class="bar">
-			<button on:click={toggleSet} class="button">
+		<div class="side-mobil md:hidden" style="margin-left:10%;" > 
+			<span class="bar">
+			<button on:click={toggleSet} class="button-mobile" >
 				{questionSet === "in" ? "O" : "I"}
 			</button></span>
 
-			<span class="bar"><select bind:value={selectedLanguage} class="dropdown">
-				<option value="en" >EN</option>
+			<span class="bar" ><select bind:value={selectedLanguage} class="dropdown button-mobile">
+				<option value="en">EN</option>
 				<option value="de">DE</option>
 				<option value="it">IT</option>
 				<option value="fr">FR</option>
@@ -141,20 +139,49 @@ onDestroy(() => {
 
 			<span class="bar" style="display: flex;
 			flex-direction: column;
+			align-items: center;"><button on:click={switchQuestion} class="button-mobile" >
+				S
+			</button></span> <p style="font-size:9px; margin:0px;  writing-mode: vertical-rl;
+			text-orientation: upright;"> Double Tap</p>
+
+			<span class="bar">
+			<button on:click={toggleFullscreen} class="button-mobile">
+				F
+			</button>
+			</span>
+			<span class="bar">
+			<button on:click={() => showModal = true} class="button-mobile">I</button>
+			</span>
+	
+	</div>
+
+	<div class="side desktop sm:hidden md:flex" style="display:none;"> <span class="bar"><h1 style="color:#000000;">
+					{questionSet === "in" ? "Check-In" : "Check-Out"}
+				</h1>
+			<button on:click={toggleSet} class="button">
+				{questionSet === "in" ? "Out" : "In"}
+			</button></span>
+
+			<span class="bar"><select bind:value={selectedLanguage} class="dropdown">
+				<option value="en" >English</option>
+				<option value="de">German</option>
+				<option value="it">Italian</option>
+				<option value="fr">French</option>
+			</select></span>
+
+			<span class="bar" style="display: flex;
+			flex-direction: column;
 			align-items: center;"><button on:click={switchQuestion} class="button" style="margin-top:18px; margin-bottom:0px;">
-				
-			</button> <p style="font-size:9px; margin:0px;  writing-mode: vertical-rl;
-			text-orientation: upright;">( Double Tap )</p></span>
+				Shuffle
+			</button> <p style="font-size:9px; margin:0px;">( Press Space )</p></span>
 
 			<span class="bar">
 			<button on:click={toggleFullscreen} class="button">
-				F
-			</button><p style="font-size:9px; margin:0px;  writing-mode: vertical-rl;
-			text-orientation: upright;">( Double Tap )</p>
+				Fullscreen
+			</button>
 			</span>
 			<span class="bar">
-			<button on:click={() => showModal = true}>I</button><p style="font-size:9px; margin:0px;  writing-mode: vertical-rl;
-			text-orientation: upright;">( Double Tap )</p>
+			<button on:click={() => showModal = true}>Info</button>
 			</span>
 	
 	</div>
@@ -170,11 +197,27 @@ onDestroy(() => {
 {#if showModal}
   <div class="modal">
     <div class="modal-content">
-      <span class="close" on:click={close}>&times;</span>
-      <p>
-        Dummy text here. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-        Voluptatem perspiciatis iste eos obcaecati accusantium cumque doloribus quaerat iusto aut.
-      </p>
+      <span class="close" on:click={close}  on:keydown={close}>&times;</span>
+     <div style="font-size: 28px; margin-top:4vv; max-width: 70%;">
+
+		<p >
+			Hey there , </p>
+            <p>
+            it's the year of efficiency! Checking-in and checking-out with your team by answering a few question together will help everyone to work more productive and aligned to  power through to the best results. 
+        </p>
+		<h2>
+			Share remotely 
+		</h2>
+			If you work remotely,just share the link (in Slack, Notion,..), and every one will have the same question.
+		<p>
+			<h2>
+				Create you own set of questions
+			</h2>
+	By default 
+
+		
+		 
+	 </div> 
     </div>
   </div>
 {/if}
